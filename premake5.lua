@@ -60,6 +60,9 @@ project "Sandbox"
     cppdialect "C++17"
     location "Sandbox"
     
+    -- Dependencies linkage
+    links { "Anvil" }
+    
     -- Compiled binary files location.
     targetdir "%{prj.name}/bin/%{cfg.buildcfg}/"
     objdir "%{prj.name}/bin/obj/%{cfg.buildcfg}/"

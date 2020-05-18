@@ -4,6 +4,9 @@ workspace "Anvil"
     -- Architecture
     architecture "x86_64"
 
+    -- Start project
+    startproject "Sandbox"
+
     -- Main build configurations.
     configurations {
         "Debug",
@@ -24,8 +27,9 @@ project "Anvil"
     -- Basic definitions.
     kind "StaticLib"
     language "C++"
-    cppdialect "C++17"
+    cppdialect "C++14"
     location "Anvil"
+    staticruntime "on"
 
     -- Compiled binary files location.
     targetdir "%{prj.name}/bin/%{cfg.buildcfg}/"
@@ -33,8 +37,8 @@ project "Anvil"
 
     -- Source-files location.
     files {
-        "%{prj.name}/include/**.h",
-        "%{prj.name}/src/**.c"
+        "%{prj.name}/include/**.hpp",
+        "%{prj.name}/src/**.cpp"
     }
 
     -- Build filters.
@@ -57,8 +61,9 @@ project "Sandbox"
     -- Basic definitions.
     kind "ConsoleApp"
     language "C++"
-    cppdialect "C++17"
+    cppdialect "C++14"
     location "Sandbox"
+    staticruntime "on"
     
     -- Dependencies linkage
     links { "Anvil" }
@@ -69,8 +74,8 @@ project "Sandbox"
 
     -- Source-files location.
     files {
-        "%{prj.name}/include/**.h",
-        "%{prj.name}/src/**.c"
+        "%{prj.name}/include/**.hpp",
+        "%{prj.name}/src/**.cpp"
     }
     
     -- Build filters.

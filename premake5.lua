@@ -41,6 +41,11 @@ project "Anvil"
         "%{prj.name}/src/**.cpp"
     }
 
+    -- Include directories
+    includedirs {
+        "%{prj.name}/include/"
+    }
+
     -- Build filters.
     filter "configurations:Debug"
         defines "ANVL_DEBUG"
@@ -77,7 +82,13 @@ project "Sandbox"
         "%{prj.name}/include/**.hpp",
         "%{prj.name}/src/**.cpp"
     }
-    
+
+    -- Include directories
+    includedirs {
+        "%{prj.name}/include/",
+        "Anvil/include/"
+    }
+
     -- Build filters.
     filter "configurations:Debug"
         defines "ANVL_DEBUG"
